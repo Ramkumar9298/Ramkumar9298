@@ -1,0 +1,24 @@
+{
+	"name": "Storage_Trigger_For_Json",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ingestion_ADLS_to_SQLDB",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/staging/",
+			"ignoreEmptyBlobs": false,
+			"scope": "/subscriptions/98acc97b-7541-4fd7-9fc3-c2653c64ce76/resourceGroups/iotdata/providers/Microsoft.Storage/storageAccounts/iotdatasa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
