@@ -5,7 +5,14 @@
 			{
 				"name": "ExecuteDDL",
 				"type": "Script",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Readfile",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -22,10 +29,27 @@
 					"scripts": [
 						{
 							"type": "Query",
-							"text": "INSERT INTO [dbo].[test1]\nvalues\n(2, 'Raj') ; "
+							"text": "@activity('Readfile').output.Response"
 						}
 					],
 					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			},
+			{
+				"name": "Readfile",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://github.com/Ramkumar9298/Ramkumar9298/blob/main/CreateTable",
+					"method": "GET"
 				}
 			}
 		],
