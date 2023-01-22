@@ -1,0 +1,5 @@
+CREATE TABLE [dbo].[test3]
+(
+ID Integer, 
+Name Varchar(20)
+) ;
