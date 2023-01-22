@@ -9,7 +9,7 @@
 					{
 						"activity": "Readfile",
 						"dependencyConditions": [
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
@@ -29,7 +29,10 @@
 					"scripts": [
 						{
 							"type": "Query",
-							"text": "@activity('Readfile').output.Response"
+							"text": {
+								"value": "@activity('Readfile').output.Response",
+								"type": "Expression"
+							}
 						}
 					],
 					"scriptBlockExecutionTimeout": "02:00:00"
