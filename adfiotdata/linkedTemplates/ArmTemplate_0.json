@@ -170,7 +170,7 @@
 							{
 								"activity": "Readfile",
 								"dependencyConditions": [
-									"Skipped"
+									"Succeeded"
 								]
 							}
 						],
