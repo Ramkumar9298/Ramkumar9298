@@ -651,7 +651,7 @@
 											{
 												"type": "Query",
 												"text": {
-													"value": "@concat(item().Prop_0.'select 1 as output')",
+													"value": "@concat(item().Prop_0,'select 1 as output')",
 													"type": "Expression"
 												}
 											}
